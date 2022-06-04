@@ -37,8 +37,7 @@ header {
     width: 30%;
 }
 
-.post:last-child {
-    order: -1;
+.post:first-child {
     width: 90%;
 }
 
@@ -52,4 +51,15 @@ header {
 
 .post_author {
     font-weight: 600;
+}
+
+.post-activities__container {
+    display: flex;
+    column-gap: 2rem;
+}
+
+.rate_btn {
+    background: none;
+    border: none;
+    cursor: pointer;
 }
