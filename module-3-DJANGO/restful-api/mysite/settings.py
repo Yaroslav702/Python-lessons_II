@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+SECRET_KEY = 'django-insecure-&hce*5pfhuke1^p*a!7930&=op^qr#z$8zvmuldz-q3uqht^)@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,13 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'blog'
+    'blog',
+    'snippets'
 ]
 
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10
+    'PAGE_SIZE': 2
 }
 
 MIDDLEWARE = [
@@ -87,7 +88,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'mysite', 
         'USER': 'postgres', 
-        'PASSWORD': '',
+        'PASSWORD': '9dxpx907',
         'HOST': '127.0.0.1', 
         'PORT': '5432',
     }

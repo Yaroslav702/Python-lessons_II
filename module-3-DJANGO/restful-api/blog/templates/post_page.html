@@ -1,0 +1,30 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} {{ post.title }} {% endblock title %} 
+{% block content %}
+<div class="post">
+    <h2>{{ post.title }}</h2><span>
+        {% for cat in post.category.all %}
+        {% if cat.title != None %}
+        ( {{cat.title}} )
+        {% endif %}
+        {% endfor %}</span>
+    <p>{{ post.text }}</p>
+    <span class="post_date">{{ post.published_date }}</span> <span class="post_author">{{ post.author }}
+    </span>
+    <div class="post-activities__container">
+        <form action="{% url 'post_like' post.id %}" method="Post">
+            {% csrf_token %}
+            <button class='rate_btn' type="submit" name="like" value="{{ post.id }}"><img width="15" height="15"
+                    src="{% get_static_prefix %}images/like-svgrepo-com.svg" alt="#">
+                {{ post.likes }}</button>
+        </form>
+        <form action="#" method="Post">
+            <button class='rate_btn' type="submit" name="dislike" value="{{ post.id }}">
+                <img width="12" height="15" src="{% get_static_prefix %}images/dislike-svgrepo-com.svg" alt="#">
+                {{ post.dislikes }}</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}

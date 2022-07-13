@@ -7,20 +7,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <title>Blog</title>
+    <title>{% block title %}Blog{% endblock title %}</title>
 </head>
 
 <header>
     <nav>
-        <a href="#">
+        <a href={% url 'post_list' %}>
             <img class="header-img" src="{% static 'images/icons8-y-26.png' %}" alt="logo">
         </a>
     </nav>
 </header>
 
 <h1 class="blog-title">Posts:</h1>
-<h3 class="last-post__label">Last post:</h3> 
-<div class="container">   
+<h3 class="last-post__label">Last post:</h3>
+<div class="container">
     {% block content %}
     {% endblock %}
-</div>
+    <footer class="page-footer">
+        <ul class="footer-menu">
+            <li class="footer-menu__item"><a target='blank' href="https://www.instagram.com/__vysotskyi__/"><img
+                        width='25' height='25' src="{% static 'images/icons8-instagram.svg' %}" alt=""></a></li>
+            <li class="footer-menu__item"><a target='blank'
+                    href="https://www.facebook.com/profile.php?id=100022074822619"><img width='25' height='25'
+                        src="{% static 'images/icons8-facebook.svg' %}" alt=""></a></li>
+            <li class="footer-menu__item"><a target='blank'
+                    href="https://www.youtube.com/channel/UC2lajCOJ33A3qyzM0vFGbeg"><img width='25' height='25'
+                        src="{% static 'images/icons8-youtube.svg' %}" alt="" </a> </li> </ul> 
+    </footer>
+ </div>

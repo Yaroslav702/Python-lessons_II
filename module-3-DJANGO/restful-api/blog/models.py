@@ -25,6 +25,14 @@ class Post(models.Model):
         self.save()
 
     
+    def set_like(self):
+        self.likes += 1
+        self.save()
+
+    def set_dislike(self):
+        self.dislikes += 1
+        self.save()
+
     def __gt__(self, other):
         return self.donate > other.donate
 
